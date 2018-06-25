@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudentEnrollment.Data;
 
 namespace StudentEnrollment.Migrations
 {
     [DbContext(typeof(SpyDBContext))]
-    partial class SpyDBContextModelSnapshot : ModelSnapshot
+    [Migration("20180625173128_setDBValues")]
+    partial class setDBValues
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,8 +45,6 @@ namespace StudentEnrollment.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Age");
-
-                    b.Property<int>("CourseId");
 
                     b.Property<string>("Name")
                         .IsRequired();
