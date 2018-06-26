@@ -1,0 +1,15 @@
+﻿@model List<StudentEnrollment.Models.Course>
+
+
+<h2>Courses </h2>
+
+@foreach (var x in Model)
+{
+	<h3>Name: @x.Name</h3>
+	<p> Level: @x.Level</p>
+	<p>Category: @x.Category</p>
+	<p><a asp-controller="Course" asp-action="Details" asp-route-id="@x.ID">View Details</a></p>
+	<p><a asp-controller="Course" asp-action="Update" asp-route-id="@x.ID">Update Course</a></p>
+	<p><a asp-controller="Course" asp-action="Delete" asp-route-id="@x.ID">Delete Course</a></p>
+	<hr />
+}

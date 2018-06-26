@@ -1,0 +1,19 @@
+﻿@using StudentEnrollment.Models
+@model StudentEnrollment.Models.Course
+
+<h1>Create Course</h1>
+
+<form asp-action="Create">
+
+	<label asp-for="Name">Course Name: </label>
+	<input asp-for="Name" />
+
+
+	<label asp-for="Level">Course Level:</label>
+	<select asp-for="Level" asp-items="Html.GetEnumSelectList<Level>()"></select>
+
+	<label asp-for="Category">Course Category:</label>
+	<select asp-for="Category" asp-items="Html.GetEnumSelectList<Category>()"></select>
+
+	<input type="submit" value="Create"/>
+</form>
