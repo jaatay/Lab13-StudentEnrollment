@@ -27,7 +27,7 @@ namespace StudentEnrollment
         public void ConfigureServices(IServiceCollection services)
         {
 			services.AddMvc();
-			services.AddDbContext<SpyDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+			services.AddDbContext<SpyDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ProductionConnection")));
         }
 
 		
