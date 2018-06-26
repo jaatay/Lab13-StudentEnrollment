@@ -9,8 +9,8 @@ using StudentEnrollment.Data;
 namespace StudentEnrollment.Migrations
 {
     [DbContext(typeof(SpyDBContext))]
-    [Migration("20180625173128_setDBValues")]
-    partial class setDBValues
+    [Migration("20180626173533_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,7 +44,7 @@ namespace StudentEnrollment.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Age");
+                    b.Property<int>("CourseId");
 
                     b.Property<string>("Name")
                         .IsRequired();
@@ -54,7 +54,17 @@ namespace StudentEnrollment.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("CourseId");
+
                     b.ToTable("Students");
+                });
+
+            modelBuilder.Entity("StudentEnrollment.Models.Student", b =>
+                {
+                    b.HasOne("StudentEnrollment.Models.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

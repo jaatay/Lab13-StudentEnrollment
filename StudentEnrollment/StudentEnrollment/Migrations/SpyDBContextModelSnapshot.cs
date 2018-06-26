@@ -52,7 +52,17 @@ namespace StudentEnrollment.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("CourseId");
+
                     b.ToTable("Students");
+                });
+
+            modelBuilder.Entity("StudentEnrollment.Models.Student", b =>
+                {
+                    b.HasOne("StudentEnrollment.Models.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

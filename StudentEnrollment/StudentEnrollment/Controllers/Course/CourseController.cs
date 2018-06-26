@@ -18,6 +18,20 @@ namespace StudentEnrollment.Controllers.Course
 			_context = context;
 		}
 
+		//search
+		public async Task<IActionResult> SearchResult(string searchString)
+		{
+			var courses = from m in _context.Courses
+						 select m;
+
+			if (!String.IsNullOrEmpty(searchString))
+			{
+				courses = courses.Where(s => s.Name.Contains(searchString));
+			}
+
+			return View(await courses.ToListAsync());
+		}
+
 		//create
 		public async Task<IActionResult> Create()
 		{
@@ -29,6 +43,7 @@ namespace StudentEnrollment.Controllers.Course
 		[HttpPost]
 		public async Task<IActionResult> Create([Bind("ID, Name, Level, Category")]StudentEnrollment.Models.Course course)
 		{
+			
 			_context.Courses.Add(course);
 			await _context.SaveChangesAsync();
 			return RedirectToAction("Index", "Home");
@@ -49,7 +64,10 @@ namespace StudentEnrollment.Controllers.Course
 		}
 		public async Task<IActionResult> ViewAll()
 		{
-			var data = await _context.Courses.ToListAsync();
+			var data = await _context.Courses
+				
+				.ToListAsync();
+	
 
 			return View(data);
 

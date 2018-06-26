@@ -1,24 +1,17 @@
 ﻿@model List<StudentEnrollment.Models.Student>
 
 
-<h2>Student Admin Portal </h2>
+<h2>Search Result </h2>
 
 @foreach (var x in Model)
 {
 	<h3>Name: @x.Name</h3>
 	<p> Alias: @x.SpyAlias</p>
 	<p>Course: @x.CourseId</p>
+
 	<p><a asp-controller="Student" asp-action="Details" asp-route-id="@x.ID">View Details</a></p>
 	<p><a asp-controller="Student" asp-action="Update" asp-route-id="@x.ID">Update Student</a></p>
 	<p><a asp-controller="Student" asp-action="Delete" asp-route-id="@x.ID">Delete Student</a></p>
+	<p><a asp-controller="Home" asp-action="Index">Return Home</a></p>
 	<hr />
 }
-
-<p><a asp-controller="Home" asp-action="Index">Return Home</a></p>
-
-<form asp-controller="Student" asp-action="SearchResult">
-	<p>
-		Search for Student: <input type="text" name="SearchString">
-		<input type="submit" value="Filter" />
-	</p>
-</form>

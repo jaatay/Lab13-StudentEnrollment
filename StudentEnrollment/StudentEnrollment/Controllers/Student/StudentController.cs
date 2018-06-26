@@ -18,10 +18,24 @@ namespace StudentEnrollment.Controllers.Student
 			_context = context;
 		}
 
+		//search
+		public async Task<IActionResult> SearchResult(string searchString)
+		{
+			var students = from m in _context.Students
+						  select m;
+
+			if (!String.IsNullOrEmpty(searchString))
+			{
+				students = students.Where(s => s.Name.Contains(searchString));
+			}
+
+			return View(await students.ToListAsync());
+		}
+
 		//create
 		public async Task<IActionResult> Create()
 		{
-			ViewData["Students"] = await _context.Students.Select(x => x)
+			ViewData["Courses"] = await _context.Courses.Select(x => x)
 				.ToListAsync();
 			return View();
 		}
@@ -49,10 +63,9 @@ namespace StudentEnrollment.Controllers.Student
 		}
 		public async Task<IActionResult> ViewAll()
 		{
-			var data = await _context.Students.ToListAsync();
+			var data = await _context.Students.Include(s => s.Course).ToListAsync();
 
 			return View(data);
-
 		}
 
 		//update

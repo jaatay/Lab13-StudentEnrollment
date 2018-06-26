@@ -1,7 +1,7 @@
 ﻿@model List<StudentEnrollment.Models.Course>
 
 
-<h2>Courses </h2>
+<h2>Search Result </h2>
 
 @foreach (var x in Model)
 {
@@ -13,13 +13,4 @@
 	<p><a asp-controller="Course" asp-action="Update" asp-route-id="@x.ID">Update Course</a></p>
 	<p><a asp-controller="Course" asp-action="Delete" asp-route-id="@x.ID">Delete Course</a></p>
 	<hr />
-}
-
-<p><a asp-controller="Home" asp-action="Index">Return Home</a></p>
-
-	<form asp-controller="Course" asp-action="SearchResult">
-		<p>
-			Search for Course: <input type="text" name="SearchString">
-			<input type="submit" value="Filter" />
-		</p>
-	</form>
+	}

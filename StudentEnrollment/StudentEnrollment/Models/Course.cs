@@ -18,6 +18,8 @@ namespace StudentEnrollment.Models
 
 		[Required]
 		public Category Category { get; set; }
+
+		
     }
 
 	public enum Level
