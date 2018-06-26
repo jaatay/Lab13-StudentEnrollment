@@ -18,9 +18,9 @@ namespace StudentEnrollment.Models
 		public string SpyAlias { get; set; }
 
 		[Required]
-		public int Age { get; set; }
+		public Course Course { get; set; }
 
 		[Required]
 		public int CourseId { get; set; }
-    }
+	}
 }

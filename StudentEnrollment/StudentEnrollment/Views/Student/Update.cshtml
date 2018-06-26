@@ -1,0 +1,20 @@
+﻿@using StudentEnrollment.Models
+@model StudentEnrollment.Models.Student
+
+<h1>Update Student</h1>
+
+<form asp-action="Update">
+
+	<label asp-for="Name"> Name: </label>
+	<input asp-for="Name" />
+
+
+	<label asp-for="SpyAlias">Spy Alias: </label>
+	<input asp-for="SpyAlias" />
+
+
+	<label asp-for="CourseId">Course </label>
+	<input asp-for="CourseId" />
+
+	<input type="submit" value="Update" />
+</form>
