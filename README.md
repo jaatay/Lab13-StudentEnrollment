@@ -4,7 +4,7 @@
 This project is an MVC application based on school enrollment. The user is granted access to an administrator portal for the school. They have the ability to perform CRUD operations on both students and schools. The information for the site is stored on a database, which is concurrently deployed along with the application on Azure.
 
 ## Example
-![Site screenshot](ScreenShot1.jpg)
+![Site screenshot](../ScreenShot1.jpg)
 
 
 ## How to use
