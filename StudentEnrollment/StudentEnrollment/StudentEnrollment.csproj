@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <StartupObject>StudentEnrollment.Program</StartupObject>
+    <ApplicationIcon />
+    <OutputType>WinExe</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
