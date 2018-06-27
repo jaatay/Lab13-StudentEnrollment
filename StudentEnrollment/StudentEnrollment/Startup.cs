@@ -27,7 +27,7 @@ namespace StudentEnrollment
         public void ConfigureServices(IServiceCollection services)
         {
 			services.AddMvc();
-			services.AddDbContext<SpyDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ProductionConnection")));
+			services.AddDbContext<SpyDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
 
 		
@@ -50,7 +50,7 @@ namespace StudentEnrollment
 
 			app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("Hello World! Except that something went wrong.");
             });
         }
     }

@@ -5,9 +5,13 @@
 
 @foreach (var x in Model)
 {
-	<h3>Name: @x.Name</h3>
-	<p> Alias: @x.SpyAlias</p>
-	<p>Course: @x.CourseId</p>
+<table>
+	<tr>
+		<td>Name: @x.Name</td>
+		<td> Alias: @x.SpyAlias</td>
+		<td>Course: @x.CourseId</td>
+	</tr>
+</table>
 	<p><a asp-controller="Student" asp-action="Details" asp-route-id="@x.ID">View Details</a></p>
 	<p><a asp-controller="Student" asp-action="Update" asp-route-id="@x.ID">Update Student</a></p>
 	<p><a asp-controller="Student" asp-action="Delete" asp-route-id="@x.ID">Delete Student</a></p>

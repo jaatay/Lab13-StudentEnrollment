@@ -18,8 +18,8 @@ namespace StudentEnrollment.Models
 
 		[Required]
 		public Category Category { get; set; }
-
 		
+	
     }
 
 	public enum Level
@@ -34,5 +34,10 @@ namespace StudentEnrollment.Models
 		Espionage,
 		Sabotage,
 		Assassination
+	}
+
+	public enum StudentList
+	{
+
 	}
 }

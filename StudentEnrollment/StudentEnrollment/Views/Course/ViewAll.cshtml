@@ -3,17 +3,24 @@
 
 <h2>Courses </h2>
 
-@foreach (var x in Model)
-{
-	<h3>Name: @x.Name</h3>
-	<p> Level: @x.Level</p>
-	<p>Category: @x.Category</p>
-	<p>Current students enrolled:</p>
-	<p><a asp-controller="Course" asp-action="Details" asp-route-id="@x.ID">View Details</a></p>
-	<p><a asp-controller="Course" asp-action="Update" asp-route-id="@x.ID">Update Course</a></p>
-	<p><a asp-controller="Course" asp-action="Delete" asp-route-id="@x.ID">Delete Course</a></p>
-	<hr />
-}
+
+	@foreach (var x in Model)
+	{
+		<table>
+			<tr>
+				<td>Name: @x.Name</td>
+				<td> Level: @x.Level</td>
+				<td>Category: @x.Category</td>
+				<td>Current students enrolled:</td>
+			</tr>
+		</table>
+		<p><a asp-controller="Course" asp-action="Details" asp-route-id="@x.ID">View Details</a></p>
+		<p><a asp-controller="Course" asp-action="Update" asp-route-id="@x.ID">Update Course</a></p>
+		<p><a asp-controller="Course" asp-action="Delete" asp-route-id="@x.ID">Delete Course</a></p>
+		
+	}
+
+
 
 <p><a asp-controller="Home" asp-action="Index">Return Home</a></p>
 

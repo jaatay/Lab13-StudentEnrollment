@@ -1,14 +1,17 @@
-﻿@model StudentEnrollment.Models.Course
+﻿@using StudentEnrollment.Models
+@model StudentEnrollment.Models.Course
 
 
-<h1>Details</h1>
+<table>
+	<tr>
+		<td>Details</td>
 
-<h2>Course Name: @Model.Name</h2>
+		<td>Course Name: @Model.Name</td>
 
-<h3>Course Level: @Model.Level</h3>
+		<td>Course Level: @Model.Level</td>
 
-<h3>Course Category: @Model.Category</h3>
-
-<h3>Current Students Enrolled:</h3>
+		<td>Course Category: @Model.Category</td>
+	</tr>
+</table>
 
 <p><a asp-controller="Home" asp-action="Index">Return Home</a></p>

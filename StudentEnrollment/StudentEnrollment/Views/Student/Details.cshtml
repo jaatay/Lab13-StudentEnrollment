@@ -3,10 +3,13 @@
 
 <h1>Student Details</h1>
 
-<h2>Student Name: @Model.Name</h2>
+<table>
+	<tr>
+		<td>Student Name: @Model.Name</td>
 
-<h3>Student Spy Alias: @Model.SpyAlias</h3>
+		<td>Student Spy Alias: @Model.SpyAlias</td>
 
-<h3>Current Course Enrolled</h3>
-
+		<td>Current Course Enrolled</td>
+	</tr>
+</table>
 <p><a asp-controller="Home" asp-action="Index">Return Home</a></p>

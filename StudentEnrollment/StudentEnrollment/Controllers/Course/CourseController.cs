@@ -55,8 +55,11 @@ namespace StudentEnrollment.Controllers.Course
 		{
 			if (id.HasValue)
 			{
-				
+				//pretty sure i got the data i wanted here, but not sure how to get it to the page
+				var students =_context.Students.Where(x => x.CourseId == id).ToList();
+
 				return View(await _context.Courses.Where(s => s.ID == id)
+					//.Include(students.ToString())
 					.SingleAsync());
 			}
 			return View();
@@ -68,7 +71,6 @@ namespace StudentEnrollment.Controllers.Course
 				
 				.ToListAsync();
 	
-
 			return View(data);
 
 		}
